@@ -45,3 +45,36 @@ for num in numbers2:
     numbers_count2[num] = numbers2.count(num)
 for num, count in numbers_count2.items():
     print(f"The number {num} appears {count} in our list")
+
+
+
+# ? Write a Python program to count the number of unique even and odd numbers from a series of numbers. 
+numbers3 = [1,1,2,2,2,4]
+
+# ! Rezolvare 1 - prin eliminarea duplicate din lista prin transformarea ei intr-un set
+evens = 0
+odds = 0
+for num in set(numbers3):
+    if num % 2 == 0:
+        evens += 1
+    else:
+        odds += 1
+print(f"Number of unique even numbers: {evens}")
+print(f"Number of unique odd numbers: {odds}")
+
+
+# ! Rezolvare 2
+evens2 = 0
+odds2 = 0
+new_numbers3 = []
+for num in numbers3:
+    if num % 2 == 0 and num not in new_numbers3:
+        evens2 += 1
+    elif num % 2 != 0 and num not in new_numbers3:
+        odds2 += 1
+    new_numbers3.append(num)
+print(f"Number of unique even numbers: {evens2}")
+print(f"Number of unique odd numbers: {odds2}")
+
+
+
